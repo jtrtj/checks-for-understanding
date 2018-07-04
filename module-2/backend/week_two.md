@@ -8,6 +8,9 @@ Note: When you're done, submit a PR.
 ### Week 2 Questions
 
 1. At a high level, what is ActiveRecord? What does it do/allow you to do?
+
+  ActiveRecord is a plug in for ruby that adds methods for your application to interact with SQL databases. It is agnostic as to what database program you are using as long as it is SQL.
+
 2. Assume you have the following model:
 
 ```ruby
@@ -17,7 +20,13 @@ end
 
 What are some methods you can call on `Team`? If these methods aren't defined in the class, how do you have access to them?
 
+  `all`,`where()`,`find()`,`select`,`group`,`order`
+
+  they are methods inherited from ActiveRecord that translate ruby like language of objects/classes to SQL commands to find and organize rows/columns in tables.
+
 3. Assume that in your database, a team has the following attributes: "id", "name", owner_id". How would you find the name of a team with an id of 4? Assuming your class only included the code from question 2, how could you find the owner of the same team?
+
+  `find(4).name`
 
 4. Assume that you added a line to your `Team` class as follows:
 
@@ -28,6 +37,8 @@ end
 ```
 
 Now how would you find the owner of the team with an id of 4?
+
+  `find(4).owner`
 
 5. In a database that's holding students and teachers, what will be the relationship between students and teachers? Draw the schema diagram.
 6. Define foreign key, primary key, and schema.
